@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faultPolicies xmlns="http://schemas.oracle.com/bpel/faultpolicy"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <faultPolicy version="0.0.1" id="MyFaultPolicy"
+               xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns="http://schemas.oracle.com/bpel/faultpolicy"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Conditions>
+      <faultName xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 name="bpelx:remoteFault">
+        <condition>
+          <action ref="Action-Retry"/>
+        </condition>
+      </faultName>
+      <faultName xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 name="bpelx:bindingFault">
+        <condition>
+          <action ref="Action-Retry"/>
+        </condition>
+      </faultName>
+      <faultName xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 name="bpelx:runtimeFault">
+        <condition>
+          <action ref="Action-Retry"/>
+        </condition>
+      </faultName>
+    </Conditions>
+    <Actions>
+      <Action id="Action-Abort">
+        <abort/>
+      </Action>
+      <Action id="Action-Retry">
+        <retry>
+          <retryCount>3</retryCount>
+          <retryInterval>10</retryInterval>
+          <exponentialBackoff/>
+           <retryFailureAction ref="ora-human-intervention"/>
+        </retry>
+      </Action>
+      <Action id="ora-human-intervention">
+            <humanIntervention/>
+        </Action>
+    </Actions>
+  </faultPolicy>
+</faultPolicies>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/RestartLO" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/RestartLO"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:tns6="http://www.samplebank.org" >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/RestartLO">
+            <xsd:import namespace="http://www.samplebank.org" schemaLocation="xsd/LoanOrig.xsd"/>
+            <xsd:element name="endRestartLOResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startRestartLO">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="endRestartLOResponse">
+        <wsdl:part name="parameters" element="tns:endRestartLOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="startRestartLO">
+        <wsdl:part name="parameters" element="tns:startRestartLO"/>
+    </wsdl:message>
+    <wsdl:portType name="RestartLOPortTypeCallBack">
+        <wsdl:operation name="endRestartLO">
+            <wsdl:input message="tns:endRestartLOResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="RestartLOPortType">
+        <wsdl:operation name="startRestartLO">
+            <wsdl:input message="tns:startRestartLO"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <plnk:partnerLinkType name="RestartLOPortTypePartnerLinkType">
+        <plnk:role name="RestartLOPortTypeProvider">
+            <plnk:portType name="tns:RestartLOPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

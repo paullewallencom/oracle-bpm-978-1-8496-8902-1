@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.8" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="Feedback">
+        <topicDocumentations>
+            <topicDocumentation name="Feedback">
+                <descriptions>
+                    <description locale="en">Feedback</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8140686500414">
+                <labels>
+                    <label locale="en">AssignOutput</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8140677385631">
+                <labels>
+                    <label locale="en">StartFeedback</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8140677385785">
+                <labels>
+                    <label locale="en">EndFeedback</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8140684344422">
+                <labels>
+                    <label locale="en">CatchEvent</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf106"/>
+            <topicDocumentation name="sf108"/>
+            <topicDocumentation name="sf109"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>

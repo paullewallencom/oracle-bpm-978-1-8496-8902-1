@@ -1,0 +1,43 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="CreditValidationService"
+     targetNamespace="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidationService/CreditValidationService"
+     xmlns:ns1="http://www.samplebank.org"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidationService/CreditValidationService"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="CreditValidationService">
+        <plnk:role name="CreditValidationServiceProvider">
+            <plnk:portType name="client:CreditValidationService"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.samplebank.org" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+             xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidationService/CreditValidationService"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <import namespace="http://www.samplebank.org" schemaLocation="xsd/LoanOrig.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="CreditValidationServiceRequestMessage">
+        <wsdl:part name="payload" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreditValidationServiceResponseMessage">
+        <wsdl:part name="payload" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreditValidationFaultMsgType">
+        <wsdl:part name="CreditValidationFault" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:portType name="CreditValidationService">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:CreditValidationServiceRequestMessage"/>
+            <wsdl:output message="client:CreditValidationServiceResponseMessage"/>
+            <wsdl:fault message="client:CreditValidationFaultMsgType"
+                        name="CreditValidationFault">
+                <wsdl:documentation>
+                    CreditValidationFault
+                </wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

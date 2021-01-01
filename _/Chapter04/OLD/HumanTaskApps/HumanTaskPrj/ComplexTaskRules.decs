@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="ComplexTaskRules">
+    <ruleEngineProvider name="myRuleEngine" provider="Oracle_11.0.0.0.0">
+        <repository type="SCA-Archive">
+            <path>HumanTaskPrj/oracle/rules/ComplexTaskRules.rules</path>
+        </repository>
+    </ruleEngineProvider>
+    <decisionService targetNamespace="http://xmlns.oracle.com/bpel/workflow/taskDecision/ComplexTaskRules_LineItemParticipantDerivationRule" ruleEngineProviderReference="myRuleEngine" name="ComplexTaskRules_LineItemParticipantDerivationRule">
+        <catalog>ComplexTaskRules</catalog>
+        <pattern name="CallFunctionStateless">
+            <arguments>
+                <call>ComplexTaskRulesBase.LineItemParticipantDerivationRule</call>
+            </arguments>
+        </pattern>
+        <pattern name="CallFunctionStateful">
+            <arguments>
+                <call>ComplexTaskRulesBase.LineItemParticipantDerivationRule</call>
+            </arguments>
+        </pattern>
+    </decisionService>
+</decisionServices>

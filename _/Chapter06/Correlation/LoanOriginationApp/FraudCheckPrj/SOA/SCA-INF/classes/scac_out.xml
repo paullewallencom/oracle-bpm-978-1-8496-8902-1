@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line>99</line>
+      <col/>
+      <file>BPEL/FraudCheck.bpel</file>
+      <name>BPEL/FraudCheck.bpel</name>
+      <fix>Remove the correlation property "ns2:Property1" from the set "CorrSet" or re-define the propertyAlias "&lt;message {http://xmlns.oracle.com/LoanOriginationApp/FraudCheckPrj/FraudCheck}FraudCheckRequestMessage>" to associate to "&lt;message {http://xmlns.oracle.com/LoanOriginationApp/FraudCheckPrj/FraudCheck}FraudCheckResponseMessage>".</fix>
+      <msg>Correlation set "CorrSet" cannot be used in this "bpel:correlation" because property "ns2:Property1" of this set is NOT associated with "&lt;message {http://xmlns.oracle.com/LoanOriginationApp/FraudCheckPrj/FraudCheck}FraudCheckResponseMessage>" (currently associates to "&lt;message {http://xmlns.oracle.com/LoanOriginationApp/FraudCheckPrj/FraudCheck}FraudCheckRequestMessage>").</msg>
+   </Fault>
+</Faults>

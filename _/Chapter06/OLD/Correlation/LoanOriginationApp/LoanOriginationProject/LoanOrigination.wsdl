@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/LoanOrigination" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/LoanOrigination"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:tns7="http://www.mybank.org"  xmlns:tns6="http://www.samplebank.org" >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/LoanOrigination">
+            <xsd:import namespace="http://www.samplebank.org" schemaLocation="xsd/LoanOrig.xsd"/>
+            <xsd:import namespace="http://www.mybank.org" schemaLocation="xsd/LoanStatus.xsd"/>
+            <xsd:element name="catchConditionalCancel">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="endCheckLoanStatusResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns7:LoanStatus"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startLOEvent">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="cancelLoan">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="endResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="reStartLOEvent">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="checkLoanStatus">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="endLOResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="conditionalCancel">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:LoanRequest"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="catchConditionalCancel">
+        <wsdl:part name="parameters" element="tns:catchConditionalCancel"/>
+    </wsdl:message>
+    <wsdl:message name="endCheckLoanStatusResponse">
+        <wsdl:part name="parameters" element="tns:endCheckLoanStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="startLOEvent">
+        <wsdl:part name="parameters" element="tns:startLOEvent"/>
+    </wsdl:message>
+    <wsdl:message name="cancelLoan">
+        <wsdl:part name="parameters" element="tns:cancelLoan"/>
+    </wsdl:message>
+    <wsdl:message name="endResponse">
+        <wsdl:part name="parameters" element="tns:endResponse"/>
+    </wsdl:message>
+    <wsdl:message name="reStartLOEvent">
+        <wsdl:part name="parameters" element="tns:reStartLOEvent"/>
+    </wsdl:message>
+    <wsdl:message name="checkLoanStatus">
+        <wsdl:part name="parameters" element="tns:checkLoanStatus"/>
+    </wsdl:message>
+    <wsdl:message name="endLOResponse">
+        <wsdl:part name="parameters" element="tns:endLOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="conditionalCancel">
+        <wsdl:part name="parameters" element="tns:conditionalCancel"/>
+    </wsdl:message>
+    <wsdl:portType name="LoanOriginationPortTypeCallBack">
+        <wsdl:operation name="end">
+            <wsdl:input message="tns:endResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="endCheckLoanStatus">
+            <wsdl:input message="tns:endCheckLoanStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="endLO">
+            <wsdl:input message="tns:endLOResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="LoanOriginationPortType">
+        <wsdl:operation name="cancelLoan">
+            <wsdl:input message="tns:cancelLoan"/>
+        </wsdl:operation>
+        <wsdl:operation name="checkLoanStatus">
+            <wsdl:input message="tns:checkLoanStatus"/>
+        </wsdl:operation>
+        <wsdl:operation name="conditionalCancel">
+            <wsdl:input message="tns:conditionalCancel"/>
+        </wsdl:operation>
+        <wsdl:operation name="startLOEvent">
+            <wsdl:input message="tns:startLOEvent"/>
+        </wsdl:operation>
+        <wsdl:operation name="reStartLOEvent">
+            <wsdl:input message="tns:reStartLOEvent"/>
+        </wsdl:operation>
+        <wsdl:operation name="catchConditionalCancel">
+            <wsdl:input message="tns:catchConditionalCancel"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <plnk:partnerLinkType name="LoanOriginationPortTypePartnerLinkType">
+        <plnk:role name="LoanOriginationPortTypeProvider">
+            <plnk:portType name="tns:LoanOriginationPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

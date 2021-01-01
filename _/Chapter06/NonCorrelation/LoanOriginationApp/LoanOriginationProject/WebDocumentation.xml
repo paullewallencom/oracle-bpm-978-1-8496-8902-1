@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3.0.0.00.00" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="Web">
+      <topicDocumentations>
+         <topicDocumentation name="Web">
+            <descriptions>
+               <description locale="en">Web</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT8146954683732">
+            <labels>
+               <label locale="en">SendLoanRequest</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT8147058715172">
+            <labels>
+               <label locale="en">ReceiveLoanResponse</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT8147652444557">
+            <labels>
+               <label locale="en">SaveLoanDetails</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT8146941516055">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT8146941516191">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT8147649812777">
+            <labels>
+               <label locale="en">SLA</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf121"/>
+         <topicDocumentation name="sf123"/>
+         <topicDocumentation name="sf124"/>
+         <topicDocumentation name="sf127"/>
+         <topicDocumentation name="sf131"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

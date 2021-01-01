@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3.0.0.00.00" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="ExceptionDemoProcess">
+      <topicDocumentations>
+         <topicDocumentation name="ExceptionDemoProcess"/>
+         <topicDocumentation name="ACT10488183905196">
+            <labels>
+               <label locale="en">ApplicationVerification</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10489082386882">
+            <labels>
+               <label locale="en">Allocated-B</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489082625184">
+            <labels>
+               <label locale="en">Start-B</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489082625218">
+            <labels>
+               <label locale="en">Complete - BC</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489102913117">
+            <labels>
+               <label locale="en">Error - BE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489105940889">
+            <labels>
+               <label locale="en">Terminate - BT</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW1048909498598">
+            <labels>
+               <label locale="en">Check-B?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10489082625378"/>
+         <topicDocumentation name="sf1048909552954">
+            <labels>
+               <label locale="en">AppsVerify-BC</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10489107075694">
+            <labels>
+               <label locale="en">AppsVerify-BE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10489108010667"/>
+         <topicDocumentation name="ACT10489666696835">
+            <labels>
+               <label locale="en">ExternalErrorHandlingEventSubprocess</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489666875797">
+            <labels>
+               <label locale="en">Start-BE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489666875798">
+            <labels>
+               <label locale="en">End-BE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10489666875861"/>
+         <topicDocumentation name="ACT10492048981832">
+            <labels>
+               <label locale="en">InvokeProcess(I)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1049205052786">
+            <labels>
+               <label locale="en">ReceiveProcess(I)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10504880099482">
+            <labels>
+               <label locale="en">CallReusableProcess(J)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505065399510">
+            <labels>
+               <label locale="en">Allocated</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505194863978">
+            <labels>
+               <label locale="en">InternalExceptionHandler</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505194864042">
+            <labels>
+               <label locale="en">Start-JInternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505194864052">
+            <labels>
+               <label locale="en">Complete-JInternal</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT1050522826198">
+            <labels>
+               <label locale="en">Terminate-JInternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505238815039">
+            <labels>
+               <label locale="en">Error-JCBE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505243658926">
+            <labels>
+               <label locale="en">Error-JExternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW10505213052727">
+            <labels>
+               <label locale="en">CheckJInternal?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW10505236409020">
+            <labels>
+               <label locale="en">CheckJInternal?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505194864029">
+            <labels>
+               <label locale="en">*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505213722445">
+            <labels>
+               <label locale="en">JInternal-Complete</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505230223187">
+            <labels>
+               <label locale="en">JInternal-Terminate</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505237560921">
+            <labels>
+               <label locale="en">*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505240740411">
+            <labels>
+               <label locale="en">JInternalCBE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505245974425">
+            <labels>
+               <label locale="en">JInternalExternal*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505065533171">
+            <labels>
+               <label locale="en">Start-J</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505065533147">
+            <labels>
+               <label locale="en">Complete - JComplete</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505074227436">
+            <labels>
+               <label locale="en">Terminate-JTerminate</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505089144097">
+            <labels>
+               <label locale="en">Error - JExternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505107451287">
+            <labels>
+               <label locale="en">Error - JInternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505108828457">
+            <labels>
+               <label locale="en">Error - JCBE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW10505067696747">
+            <labels>
+               <label locale="en">CheckJ?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW10505102440879">
+            <labels>
+               <label locale="en">CheckJ?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505065533128"/>
+         <topicDocumentation name="sf10505068319631">
+            <labels>
+               <label locale="en">JComplete</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505076344185">
+            <labels>
+               <label locale="en">JTerminate</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf1050509220142">
+            <labels>
+               <label locale="en">*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505102975651">
+            <labels>
+               <label locale="en">JExternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505110137158">
+            <labels>
+               <label locale="en">JInternal*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf1050511078308">
+            <labels>
+               <label locale="en">JCBE</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505092830423">
+            <labels>
+               <label locale="en">InvokeService(K)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505341663016">
+            <labels>
+               <label locale="en">Reallocated</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505354051088">
+            <labels>
+               <label locale="en">CompensateActivity</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505342372358">
+            <labels>
+               <label locale="en">Start-JCBE</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505342372444">
+            <labels>
+               <label locale="en">End-JCBE</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505342372419"/>
+         <topicDocumentation name="sf10505355017736"/>
+         <topicDocumentation name="ACT1050538733551">
+            <labels>
+               <label locale="en">Started</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505387507572">
+            <labels>
+               <label locale="en">StartJExternal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505387507581">
+            <labels>
+               <label locale="en">Complete</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505418390032">
+            <labels>
+               <label locale="en">Terminate</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505433158027">
+            <labels>
+               <label locale="en">Error</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW10505390599176">
+            <labels>
+               <label locale="en">CheckError?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505387507648">
+            <labels>
+               <label locale="en">*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505391394966">
+            <labels>
+               <label locale="en">JlExternal-Complete</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505422714388">
+            <labels>
+               <label locale="en">JExternal-Terminate</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505434176455">
+            <labels>
+               <label locale="en">JlExternal-Error*</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT10505678164941">
+            <labels>
+               <label locale="en">SubsequentActivity</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10488163732582">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10488163732662">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10491023014312">
+            <labels>
+               <label locale="en">End-A</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10488202663052">
+            <labels>
+               <label locale="en">A</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10489084945630">
+            <labels>
+               <label locale="en">B</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10504925718532">
+            <labels>
+               <label locale="en">CBE</label>
+            </labels>
+            <descriptions>
+               <description locale="en">Catch Boundary Event</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT10505326733671">
+            <labels>
+               <label locale="en">JCBE_BizException</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10490992007751"/>
+         <topicDocumentation name="sf10492052929756"/>
+         <topicDocumentation name="sf10504882699175"/>
+         <topicDocumentation name="sf10504912198480"/>
+         <topicDocumentation name="sf10504912566938"/>
+         <topicDocumentation name="sf10504915110445"/>
+         <topicDocumentation name="sf1050493028615"/>
+         <topicDocumentation name="sf10489087411667">
+            <labels>
+               <label locale="en">B</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf10505093810045"/>
+         <topicDocumentation name="sf10505095738477"/>
+         <topicDocumentation name="sf1050534612099"/>
+         <topicDocumentation name="sf10505352913830"/>
+         <topicDocumentation name="sf10505679181182"/>
+         <topicDocumentation name="sf10509843697525"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

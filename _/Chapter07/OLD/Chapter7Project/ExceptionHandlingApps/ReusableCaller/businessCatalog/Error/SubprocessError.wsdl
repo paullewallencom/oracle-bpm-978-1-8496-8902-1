@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?bpmo version="11.1.1.7.0.0.8" build="0.8" fullName="Error.SubprocessError" modifiers="262144"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<definitions targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/Error/SubprocessError.Interface" name="SubprocessError" xmlns:oj="http://xmlns.oracle.com/bpm/bpmobject/Error/SubprocessError"  xmlns:tns="http://xmlns.oracle.com/bpm/bpmobject/Error/SubprocessError.Interface"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns="http://schemas.xmlsoap.org/wsdl/"  xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/" >
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://xmlns.oracle.com/bpm/bpmobject/Error/SubprocessError" schemaLocation="SubprocessError.xsd"/>
+        </xsd:schema>
+    </types>
+    <portType name="SubprocessErrorPortType"/>
+    <binding name="SubprocessErrorPortTypeBinding" type="tns:SubprocessErrorPortType">
+        <bpmo:binding element="oj:SubprocessError" flags="exception"/>
+    </binding>
+</definitions>

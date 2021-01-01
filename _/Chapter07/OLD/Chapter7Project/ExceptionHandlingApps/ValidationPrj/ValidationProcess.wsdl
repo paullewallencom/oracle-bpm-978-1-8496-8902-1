@@ -1,0 +1,36 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="ValidationProcess"
+     targetNamespace="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess"
+     xmlns:ns1="http://www.samplebank.org"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="ValidationProcess">
+        <plnk:role name="ValidationProcessProvider" portType="client:ValidationProcess"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.samplebank.org" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+             xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <import namespace="http://www.samplebank.org" schemaLocation="xsd/LoanOrig.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="ValidationProcessRequestMessage">
+        <wsdl:part name="payload" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ValidationProcessResponseMessage">
+        <wsdl:part name="payload" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:message name="FaultMsgType">
+        <wsdl:part name="FaultMsgPart" element="ns1:LoanRequest"/>
+    </wsdl:message>
+    <wsdl:portType name="ValidationProcess">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:ValidationProcessRequestMessage"/>
+            <wsdl:output message="client:ValidationProcessResponseMessage"/>
+            <wsdl:fault message="client:FaultMsgType" name="ValidationFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

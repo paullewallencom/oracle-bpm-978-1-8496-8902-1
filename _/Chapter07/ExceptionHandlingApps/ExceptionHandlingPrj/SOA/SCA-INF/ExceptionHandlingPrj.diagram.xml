@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="ValidationProcess.service">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="177" width="137" height="96">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="170" width="156" height="110">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="ValidationProcess.service" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortTypeCallBack)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>start</dgm:item>
+            <dgm:item>validationProcessEnd</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="ExceptionDemoProcess.service">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="26" width="137" height="108">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="19" width="156" height="122">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="ExceptionDemoProcess.service" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ExceptionDemoProcess#wsdl.interface(ExceptionDemoProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/ExceptionDemoProcess#wsdl.interface(ExceptionDemoProcessPortTypeCallBack)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>start</dgm:item>
+            <dgm:item>endLO</dgm:item>
+            <dgm:item>end</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="CreditValidationService">
+        <dgm:body borderWidth="2" arcRad="20" X="790" Y="200" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="780" Y="193" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreditValidationService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidation/CreditValidationService#wsdl.interface(CreditValidationService)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="ExceptionDemoProcess">
+        <dgm:body borderWidth="2" arcRad="20" X="256" Y="50" width="130" height="111">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="246" Y="43" width="150" height="127">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ExceptionDemoProcess.service" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ExceptionDemoProcess#wsdl.interface(ExceptionDemoProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/ExceptionDemoProcess#wsdl.interface(ExceptionDemoProcessPortTypeCallBack)"/>
+        <dgm:outputPort name="HumanTasks.ApplicationVerification.reference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="ValidationProcess.reference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortTypeCallBack)"/>
+        <dgm:outputPort name="Services.Externals.CreditValidationService.reference" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidation/CreditValidationService#wsdl.interface(CreditValidationService)"/>
+        <dgm:nodeIcon URI="/oracle/bpm/fusion/soa/msg/images/bpmncomponent20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="ApplicationVerification">
+        <dgm:body borderWidth="2" arcRad="20" X="484" Y="28" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="474" Y="21" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="ValidationProcess">
+        <dgm:body borderWidth="2" arcRad="20" X="484" Y="123" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="474" Y="116" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ValidationProcess.service" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/ValidationProcess#wsdl.interface(ValidationProcessPortTypeCallBack)"/>
+        <dgm:nodeIcon URI="/oracle/bpm/fusion/soa/msg/images/bpmncomponent20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="ExceptionDemoProcess/HumanTasks.ApplicationVerification.reference" target="ApplicationVerification/TaskService" width="2">
+        <dgm:gSegment X1="396" Y1="75" X2="420" Y2="75"/>
+        <dgm:gSegment X1="420" Y1="75" X2="420" Y2="53"/>
+        <dgm:gSegment X1="420" Y1="53" X2="474" Y2="53"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ValidationProcess.service" target="ValidationProcess/ValidationProcess.service" width="2">
+        <dgm:gSegment X1="168" Y1="187" X2="420" Y2="187"/>
+        <dgm:gSegment X1="420" Y1="187" X2="420" Y2="148"/>
+        <dgm:gSegment X1="420" Y1="148" X2="474" Y2="148"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ExceptionDemoProcess/ValidationProcess.reference" target="ValidationProcess/ValidationProcess.service" width="2">
+        <dgm:gSegment X1="396" Y1="100" X2="450" Y2="100"/>
+        <dgm:gSegment X1="450" Y1="100" X2="450" Y2="148"/>
+        <dgm:gSegment X1="450" Y1="148" X2="474" Y2="148"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ExceptionDemoProcess/Services.Externals.CreditValidationService.reference" target="CreditValidationService" width="2">
+        <dgm:gSegment X1="396" Y1="125" X2="435" Y2="125"/>
+        <dgm:gSegment X1="435" Y1="125" X2="435" Y2="210"/>
+        <dgm:gSegment X1="435" Y1="210" X2="780" Y2="210"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ExceptionDemoProcess.service" target="ExceptionDemoProcess/ExceptionDemoProcess.service" width="2">
+        <dgm:gSegment X1="168" Y1="36" X2="192" Y2="36"/>
+        <dgm:gSegment X1="192" Y1="36" X2="192" Y2="75"/>
+        <dgm:gSegment X1="192" Y1="75" X2="246" Y2="75"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

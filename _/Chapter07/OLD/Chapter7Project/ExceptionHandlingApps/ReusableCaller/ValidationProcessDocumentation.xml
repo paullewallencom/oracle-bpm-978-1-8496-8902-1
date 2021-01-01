@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.8" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="ValidationProcess">
+        <topicDocumentations>
+            <topicDocumentation name="ValidationProcess">
+                <descriptions>
+                    <description locale="en">ValidationProcess</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8545683682961">
+                <labels>
+                    <label locale="en">InvokedStart</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8545790435320">
+                <labels>
+                    <label locale="en">ValidationProcessEnd</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8599011311821">
+                <labels>
+                    <label locale="en">Subprocess1</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8599011518161">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8599011518195">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8599014175048">
+                <labels>
+                    <label locale="en">Check?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8599025494855">
+                <labels>
+                    <label locale="en">DoLotOfThings</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf147"/>
+            <topicDocumentation name="sf148"/>
+            <topicDocumentation name="sf149"/>
+            <topicDocumentation name="EVT8599029742745">
+                <labels>
+                    <label locale="en">CBE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8599037743767">
+                <labels>
+                    <label locale="en">SomeActivity</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8599077744369">
+                <labels>
+                    <label locale="en">OutputAssignment</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf116"/>
+            <topicDocumentation name="sf152"/>
+            <topicDocumentation name="sf153"/>
+            <topicDocumentation name="sf155"/>
+            <topicDocumentation name="sf156"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>

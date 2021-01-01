@@ -1,0 +1,24 @@
+Nov 12, 2013 3:10:50 PM oracle.mds
+NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
+Nov 12, 2013 3:10:51 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
+Nov 12, 2013 3:10:51 PM oracle.mds
+NOTIFICATION: Auditing is disabled for component MDS.
+Nov 12, 2013 3:10:51 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFO: XMLSchema incremental build enabled.
+Nov 12, 2013 3:10:51 PM com.collaxa.cube.CubeLogger info
+INFO: validating "CreditValidationService.bpel" ...
+Nov 12, 2013 3:10:51 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+WARNING: JRF is unable to determine the current application server platform.
+Nov 12, 2013 3:10:51 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+WARNING: JRF is unable to determine the current application server platform.
+Nov 12, 2013 3:10:51 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "CreditValidationService" in 47.7 milliseconds [nodes 13=0+13, 272.3 nodes/sec]
+Nov 12, 2013 3:10:55 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "CreditValidationService" in 3.188 seconds
+Nov 12, 2013 3:10:55 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 2.9 milliseconds
+
+Nov 12, 2013 3:10:55 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "CreditValidationService" in 42.8 milliseconds
+

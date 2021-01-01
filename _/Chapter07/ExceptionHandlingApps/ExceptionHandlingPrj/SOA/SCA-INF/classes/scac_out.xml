@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ApplicationVerification.task</file>
+      <name>HumanTasks/ApplicationVerification.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:wire/ns:target.uri[.='ValidationProcess/ValidationProcess.service']</loc>
+      <line>101</line>
+      <col>17</col>
+      <file>D:\c7777777Rewrite\9021_07_12c\ExceptionHandlingApps\ExceptionHandlingPrj\SOA\composite.xml</file>
+      <name>D:\c7777777Rewrite\9021_07_12c\ExceptionHandlingApps\ExceptionHandlingPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>Schema validation failed with exception "Invalid element 'element' in 'all'"</msg>
+   </Fault>
+</Faults>

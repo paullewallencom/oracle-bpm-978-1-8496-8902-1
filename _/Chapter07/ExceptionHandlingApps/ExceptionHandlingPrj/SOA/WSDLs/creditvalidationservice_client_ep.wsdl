@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+     name="CreditValidationService"
+     targetNamespace="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidation/CreditValidationService"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidation/CreditValidationService"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:documentation>
+        <abstractWSDL>http://VIACHARY-US:7003/soa-infra/services/default/CreditValidation!1.0/WSDLs/CreditValidationService.wsdl</abstractWSDL>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="CreditValidationService">
+        <plnk:role name="CreditValidationServiceProvider" portType="client:CreditValidationService"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidation/CreditValidationService"
+                 schemaLocation="../CreditValidationService.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="CreditValidationServiceRequestMessage">
+        <wsdl:part name="payload" element="client:process"/>
+    </wsdl:message>
+    <wsdl:message name="CreditValidationServiceResponseMessage">
+        <wsdl:part name="payload" element="client:processResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CreditValidationService">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:CreditValidationServiceRequestMessage"/>
+            <wsdl:output message="client:CreditValidationServiceResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CreditValidationServiceBinding" type="client:CreditValidationService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="process">
+            <soap:operation style="document" soapAction="process"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="creditvalidationservice_client_ep">
+        <wsdl:port name="CreditValidationService_pt" binding="client:CreditValidationServiceBinding">
+            <soap:address location="http://viachary-us:7003/soa-infra/services/default/CreditValidation/creditvalidationservice_client_ep"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

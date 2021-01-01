@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.8" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="ReusableCaller">
+        <topicDocumentations>
+            <topicDocumentation name="ReusableCaller">
+                <descriptions>
+                    <description locale="en">ReusableCaller</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8536517116461">
+                <labels>
+                    <label locale="en">CallReusableProcess(J)</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8536707942575">
+                <labels>
+                    <label locale="en">SubsequentActivity2</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8536729322066">
+                <labels>
+                    <label locale="en">SubsequentActivity1</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8543897321371">
+                <labels>
+                    <label locale="en">BizErrorHandlerSP</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8543986574238">
+                <labels>
+                    <label locale="en">InternalESP</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT854398657437">
+                <labels>
+                    <label locale="en">Started - JE2</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543986574443">
+                <labels>
+                    <label locale="en">Complete - JE2C</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544006618240">
+                <labels>
+                    <label locale="en">Terminate - JE2T</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544008449370">
+                <labels>
+                    <label locale="en">Error - JE2EX</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8545366459228">
+                <labels>
+                    <label locale="en">Error - JE2E_CBE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8544004849574">
+                <labels>
+                    <label locale="en">CheckIn?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8545359841570">
+                <labels>
+                    <label locale="en">Error - JE2E</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf101"/>
+            <topicDocumentation name="sf102">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf104">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf106">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf109"/>
+            <topicDocumentation name="sf111"/>
+            <topicDocumentation name="EVT854389749034">
+                <labels>
+                    <label locale="en">Allocated</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543897490419">
+                <labels>
+                    <label locale="en">Complete - JC</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543915227244">
+                <labels>
+                    <label locale="en">Terminate - JT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543919902240">
+                <labels>
+                    <label locale="en">Error  - JE1</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544567193640">
+                <labels>
+                    <label locale="en">Error - JE3</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8545127641379">
+                <labels>
+                    <label locale="en">Error - JE2</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8543917035114">
+                <labels>
+                    <label locale="en">CheckIn?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8561480529921">
+                <labels>
+                    <label locale="en">ErrorScenarionsBranch</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf87"/>
+            <topicDocumentation name="sf93">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf95">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf117">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf108">
+                <descriptions>
+                    <description locale="en">ProcessPDOIN == "JE2C" or ProcessPDOIN == "JE2EXC" or ProcessPDOIN == "JE2EXE" or ProcessPDOIN == "JE2EXT" or ProcessPDOIN == "JE2E_CBE" or ProcessPDOIN == "JE2T"</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf172">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf175">
+                <descriptions>
+                    <description locale="en">ProcessPDOIN == "JE1C" or ProcessPDOIN == "JE1E" or ProcessPDOIN == "JE1T" orProcessPDOIN == "JE2C" or ProcessPDOIN == "JE2EXC" or ProcessPDOIN == "JE2EXE" or ProcessPDOIN == "JE2EXT" or ProcessPDOIN == "JE2E_CBE" or ProcessPDOIN == "JE2T" or
+ProcessPDOIN == "JE3"</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8543938018517">
+                <labels>
+                    <label locale="en">ExternalErrorHandlingEventSubprocess</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543938180546">
+                <labels>
+                    <label locale="en">Started - E , F , JE1, JE2EX, K</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544057166871">
+                <labels>
+                    <label locale="en">Terminate</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544058659361">
+                <labels>
+                    <label locale="en">Error</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT854440447300">
+                <labels>
+                    <label locale="en">Complete</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8552945164092">
+                <labels>
+                    <label locale="en">End - E &amp; F</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8544052800812">
+                <labels>
+                    <label locale="en">CheckIn?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf98"/>
+            <topicDocumentation name="sf109">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf111">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf114"/>
+            <topicDocumentation name="sf145"/>
+            <topicDocumentation name="ACT8544605932898">
+                <labels>
+                    <label locale="en">Reallocated - JE3,JE2E_CBE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544606287557">
+                <labels>
+                    <label locale="en">ReallocatedStart - JE2E_CBE &amp; JE3</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544606287671">
+                <labels>
+                    <label locale="en">EnReallocatedd</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf121"/>
+            <topicDocumentation name="ACT8545519446074">
+                <labels>
+                    <label locale="en">InvokeService(K)</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8545753099647">
+                <labels>
+                    <label locale="en">InvokeProcess(I)</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8545796297072">
+                <labels>
+                    <label locale="en">ReceiveProcess(I)</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8548645831471">
+                <labels>
+                    <label locale="en">Assigned - ApplicationVerification</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8548659959029">
+                <labels>
+                    <label locale="en">Subprocess-B</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548660182810">
+                <labels>
+                    <label locale="en">Started-B</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548660182996">
+                <labels>
+                    <label locale="en">Complete - BC</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548661807963">
+                <labels>
+                    <label locale="en">Wait</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8561225416370">
+                <labels>
+                    <label locale="en">Terminate - BT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT856122674891">
+                <labels>
+                    <label locale="en">Error - BE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8561228341250">
+                <labels>
+                    <label locale="en">CheckIn?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf144"/>
+            <topicDocumentation name="sf145"/>
+            <topicDocumentation name="sf144">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf146">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf150"/>
+            <topicDocumentation name="ACT8548682204616">
+                <labels>
+                    <label locale="en">Assigned - AddressVerification</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8548729114710">
+                <labels>
+                    <label locale="en">Assigned - CardVerification</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT8548770612811">
+                <labels>
+                    <label locale="en">Assigned - EmploymentVerification</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8520633814031">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8520633814064">
+                <labels>
+                    <label locale="en">EndProcess</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548696697997">
+                <labels>
+                    <label locale="en">Terminate-C&amp;D</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548741126286">
+                <labels>
+                    <label locale="en">Error-E&amp;F</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548655430188">
+                <labels>
+                    <label locale="en">End-A</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8553356123175">
+                <labels>
+                    <label locale="en">End-G&amp;H</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8543886418351">
+                <labels>
+                    <label locale="en">CBE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8544566191525">
+                <labels>
+                    <label locale="en">JE31</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8545411335759">
+                <labels>
+                    <label locale="en">JE2E_CBE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548657864755">
+                <labels>
+                    <label locale="en">B</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548690707992">
+                <labels>
+                    <label locale="en">C</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548694583651">
+                <labels>
+                    <label locale="en">D</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548751386017">
+                <labels>
+                    <label locale="en">F</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548653080237">
+                <labels>
+                    <label locale="en">A</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8548747957165">
+                <labels>
+                    <label locale="en">E</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8553391948533">
+                <labels>
+                    <label locale="en">H</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT8598895189552">
+                <labels>
+                    <label locale="en">G</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8546256990180">
+                <labels>
+                    <label locale="en">CheckIn?</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW8546464066679">
+                <labels>
+                    <label locale="en">Converge</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf82"/>
+            <topicDocumentation name="sf84"/>
+            <topicDocumentation name="sf86"/>
+            <topicDocumentation name="sf89"/>
+            <topicDocumentation name="sf91"/>
+            <topicDocumentation name="sf123"/>
+            <topicDocumentation name="sf125"/>
+            <topicDocumentation name="sf114">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf115"/>
+            <topicDocumentation name="sf126"/>
+            <topicDocumentation name="sf129"/>
+            <topicDocumentation name="sf179">
+                <descriptions>
+                    <description locale="en">ProcessPDOIN == "AppsVerify"</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf213"/>
+            <topicDocumentation name="sf223"/>
+            <topicDocumentation name="sf147">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf153">
+                <descriptions>
+                    <description locale="en">ProcessPDOIN == "AddressVerify"</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf155"/>
+            <topicDocumentation name="sf159">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf161">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf165">
+                <descriptions>
+                    <description locale="en">ProcessPDOIN == "CardVerify"</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf171">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf173"/>
+            <topicDocumentation name="sf183">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf185"/>
+            <topicDocumentation name="sf141"/>
+            <topicDocumentation name="sf142">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf168">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf149">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf151">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf150">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf145">
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+        </topicDocumentations>
+    </component>
+</processDocumentation>

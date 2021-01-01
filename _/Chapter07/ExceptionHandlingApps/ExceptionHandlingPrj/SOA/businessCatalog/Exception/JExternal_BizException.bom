@@ -1,0 +1,19 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.catalog.exception;
+
+
+@com.oracle.scripting.lang.annotations.CatalogType(element = "E", 
+			namespace = "http://xmlns.oracle.com/bpm/bpmobject/Exception/JExternal_BizException", 
+			name = "JExternal_BizException", 
+			location = "/businessCatalog/Exception/JExternal_BizException.xsd", 
+			module = "Exception") 
+class JExternal_BizException extends com.oracle.scripting.lang.XmlCatalogException{
+
+}

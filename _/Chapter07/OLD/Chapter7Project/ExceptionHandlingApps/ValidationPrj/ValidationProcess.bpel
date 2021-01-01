@@ -1,0 +1,102 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Nov 12 13:06:06 EST 2013
+  Author:  viachary
+  Type: BPEL 2.0 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="ValidationProcess"
+               targetNamespace="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://www.samplebank.org"
+         xmlns:ns2="http://xmlns.oracle.com/Validationprocess"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+
+    <import namespace="http://xmlns.oracle.com/ExceptionHandlingApps/ValidationPrj/ValidationProcess" location="ValidationProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="validationprocess_client" partnerLinkType="client:ValidationProcess" myRole="ValidationProcessProvider"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:ValidationProcessRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:ValidationProcessResponseMessage"/>
+    <variable name="FaultVar" messageType="client:FaultMsgType"/>
+  </variables>
+  <faultHandlers>
+    <catch faultName="client:ValidationFault" faultVariable="FaultVar"
+           faultMessageType="client:FaultMsgType">
+      <sequence name="Sequence1">
+        <assign name="Assign1">
+          <copy>
+            <from>$inputVariable.payload</from>
+            <to>$FaultVar.FaultMsgPart</to>
+          </copy>
+        </assign>
+        <reply name="ReplyValidationFault" faultName="client:ValidationFault"
+               variable="FaultVar" partnerLink="validationprocess_client"
+               portType="client:ValidationProcess" operation="process"/>
+      </sequence>
+    </catch>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in ValidationProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="validationprocess_client" 
+    portType="client:ValidationProcess" operation="process" variable="inputVariable" createInstance="yes"/>
+    <if name="If1">
+      <condition>$inputVariable.payload/ns1:ApplicantDetails/ns1:ApplicantInformation/ns1:Attribute1 = "Good"</condition>
+      <reply name="replyOutput" partnerLink="validationprocess_client"
+             portType="client:ValidationProcess" operation="process"
+             variable="outputVariable"/>
+      <else>
+        <throw name="ValidationFault" faultVariable="FaultVar"
+               faultName="ns2:ValidationFault"/>
+      </else>
+    </if>
+    <!-- Generate reply to synchronous request -->
+  </sequence>
+</process>

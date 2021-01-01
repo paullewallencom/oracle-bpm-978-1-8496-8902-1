@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process name="CreditValidationService" targetNamespace="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidationService/CreditValidationService" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/ExceptionHandlingApps/CreditValidationService/CreditValidationService" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://www.samplebank.org" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk" xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath" xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" id="BpPrc0">
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="creditvalidationservice_client" partnerLinkType="client:CreditValidationService" myRole="CreditValidationServiceProvider"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:CreditValidationServiceRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:CreditValidationServiceResponseMessage"/>
+    <variable messageType="client:CreditValidationFaultMsgType" name="FaultVar"/>
+  </variables>
+  <faultHandlers id="BpFhs0">
+    <catch faultName="client:CreditValidationFault" faultVariable="FaultVar" id="BpCFt0">
+      <sequence name="Sequence1" id="BpSeq0">
+        <assign name="Assign1ment" id="BpAss0">
+          <copy>
+            <from variable="inputVariable" part="payload" query="/ns1:LoanRequest"/>
+            <to variable="FaultVar" part="CreditValidationFault" query="/ns1:LoanRequest"/>
+          </copy>
+        </assign>
+        <reply name="ReplyCreditValidationFault" faultName="client:CreditValidationFault" partnerLink="creditvalidationservice_client" portType="client:CreditValidationService" operation="process" variable="FaultVar" id="BpRpl0"/>
+      </sequence>
+    </catch>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main" id="BpSeq1">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in CreditValidationService.wsdl) -->
+    <receive name="receiveInput" partnerLink="creditvalidationservice_client" portType="client:CreditValidationService" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
+    <assign name="Assignment" id="BpAss1">
+      <copy>
+        <from variable="inputVariable" part="payload" query="/ns1:LoanRequest"/>
+        <to variable="outputVariable" part="payload" query="/ns1:LoanRequest"/>
+      </copy>
+      <copy>
+        <from variable="inputVariable" part="payload" query="/ns1:LoanRequest"/>
+        <to variable="FaultVar" part="CreditValidationFault" query="/ns1:LoanRequest"/>
+      </copy>
+    </assign>
+    <switch name="Switch1" id="BpSwt0">
+      <case condition="bpws:getVariableData('inputVariable','payload','/ns1:LoanRequest/ns1:ApplicantDetails/ns1:ApplicantInformation/ns1:Attribute1') = &quot;Bad&quot;">
+        <bpelx:annotation>
+          <bpelx:general>
+            <bpelx:property name="userLabel">
+              <![CDATA[Fault]]>
+            </bpelx:property>
+          </bpelx:general>
+        </bpelx:annotation>
+        <throw name="ThrowCreditValidationFault" faultName="client:CreditValidationFault" faultVariable="FaultVar" id="BpThw0"/>
+      </case>
+      <otherwise>
+        <reply name="replyOutput" partnerLink="creditvalidationservice_client" portType="client:CreditValidationService" operation="process" variable="outputVariable" id="BpRpl1"/>
+      </otherwise>
+    </switch>
+    <!-- Generate reply to synchronous request -->
+  </sequence>
+</process><!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Nov 12 15:00:55 EST 2013
+  Author:  viachary
+  Type: BPEL 1.1 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
